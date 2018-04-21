@@ -1,0 +1,22 @@
+{
+  "dbs": [
+    {
+      "name": "dev-db",
+      "user": "devDbUser",
+      "pass": "devP@ssw0rd!",
+      "roles": ["readWrite"]
+    },
+    {
+      "name": "test-db",
+      "user": "testDbUser",
+      "pass": "testP@SSword123",
+      "roles": ["readWrite"]
+    },
+    {
+      "name": "prod-db",
+      "user": "prodDbUser",
+      "pass": "prodPa$Sw0rd_!",
+      "roles": ["readWrite"]
+    }
+  ]
+}
