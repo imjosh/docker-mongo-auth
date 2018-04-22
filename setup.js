@@ -53,12 +53,17 @@ function load() {
 
   // setup user/pass/roles for each db in config
   for (let i = 0; i < config.dbs.length; i += 1) {
-    let db = conn.getDB(config.dbs[i].name);
+    const dbName = config.dbs[i].name;
+    const user = config.dbs[i].user;
+    const roles = config.dbs[i].roles;
+
+    let db = conn.getDB(dbName);
+    print(`DOCKER-MONGO-AUTH: Create user: ${user} with roles: ${roles} for db: ${dbName}`)
     db.createUser(
       {
-        user: config.dbs[i].user,
+        user: user,
         pwd: config.dbs[i].pass,
-        roles: config.dbs[i].roles,
+        roles: roles,
       }
     )
   }
