@@ -146,4 +146,4 @@ You can either:
 
     If you are working in development and have your config file in a bind volume, **be sure to configure the volume as read-only to avoid having your local copy deleted** (see `docker run` example above).
 
-1. The mongo image will only run the init script one time, only if [there's no evidence](https://github.com/docker-library/mongo/blob/master/3.4/docker-entrypoint.sh#L212) that mongo has already been initialized.  So, if you're working in development, you may need to occasionally `docker volume rm` to be able to re-init your DBs. The usage examples provided here explicity name the mongo volumes to make them easier to find for this purpose.
+1. The mongo image will only run the init script one time, only if [there's no evidence](https://github.com/docker-library/mongo/blob/master/3.4/docker-entrypoint.sh#L212) that mongo has already been initialized.  So, if you're working in development, you may need to occasionally `docker volume rm` to be able to re-init your DBs. The usage examples provided here explicitly name the mongo volumes to make them easier to find for this purpose.
