@@ -20,9 +20,8 @@ ENV MONGO_AUTH_CONFIG="./config/config.json"
 # ENV MONGO_INITDB_ROOT_USERNAME_FILE=/run/secrets/mongo_admin_user
 # ENV MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongo_admin_password
 
-RUN mkdir -p /tmp/mongo-auth
 WORKDIR /tmp/mongo-auth
-ADD ${MONGO_AUTH_CONFIG} config.json
+COPY ${MONGO_AUTH_CONFIG} config.json
 
 WORKDIR /docker-entrypoint-initdb.d
-ADD setup.js setup.js
+COPY setup.js setup.js
